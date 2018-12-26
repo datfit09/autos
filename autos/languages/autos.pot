@@ -1,0 +1,216 @@
+# Copyright (C) 2018 Haintheme
+# This file is distributed under the same license as the Haintheme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Haintheme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: autos/404.php:11
+msgid "<h2>404 NOT FOUND</h2>"
+msgstr ""
+
+#: autos/404.php:12
+msgid "<p>The article you were looking for was not found, but maybe try looking again!</p>"
+msgstr ""
+
+#: autos/404.php:14
+msgid "<h3>Content catagory</h3>"
+msgstr ""
+
+#: autos/404.php:19
+msgid "Tag Cloud"
+msgstr ""
+
+#. translators: %s: post title
+#: autos/comments.php:17
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: autos/comments.php:21
+msgctxt "comments title"
+msgid " COMMENTS (%1$s) "
+msgid_plural " COMMENTS (%1$s) "
+msgstr[0] ""
+msgstr[1] ""
+
+#: autos/comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: autos/functions.php:79
+msgid "Primary Menu"
+msgstr ""
+
+#: autos/functions.php:144
+msgid "Post tagged: %1$s"
+msgstr ""
+
+#: autos/functions.php:146
+msgid "Post categorized: %1$s"
+msgstr ""
+
+#: autos/functions.php:148
+msgid "Daily Archives: %1$s"
+msgstr ""
+
+#: autos/functions.php:220
+msgid "Main Sidebar"
+msgstr ""
+
+#: autos/functions.php:222
+msgid "Widgets in this area will be shown on all posts and pages."
+msgstr ""
+
+#: autos/functions.php:232
+msgid "Footer Widget"
+msgstr ""
+
+#: autos/functions.php:234
+msgid "Widgets in this area will be shown on foooter."
+msgstr ""
+
+#: autos/functions.php:250
+msgid "Logo Image"
+msgstr ""
+
+#: autos/functions.php:260
+msgid "Logo Image Footer"
+msgstr ""
+
+#: autos/functions.php:340
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: autos/functions.php:359
+msgid "Edit"
+msgstr ""
+
+#: autos/inc/customizer/blog.php:6
+msgid "Blog"
+msgstr ""
+
+#: autos/inc/customizer/blog.php:28, autos/inc/customizer/blog.php:54
+msgid "Blog Title"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:30
+msgid "Color"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:54, autos/inc/customizer/header.php:83
+msgid "Background Color"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:78
+msgid "Footer Left"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:102
+msgid "Footer right"
+msgstr ""
+
+#: autos/inc/customizer/header.php:7
+msgid "Header"
+msgstr ""
+
+#: autos/inc/customizer/header.php:17
+msgid "Topbar"
+msgstr ""
+
+#: autos/inc/customizer/header.php:26, autos/inc/customizer/header.php:59
+msgid "Header Content"
+msgstr ""
+
+#: autos/inc/customizer/header.php:35
+msgid "Page header"
+msgstr ""
+
+#: autos/inc/customizer/header.php:105
+msgid "Background"
+msgstr ""
+
+#: autos/inc/customizer/header.php:128
+msgid "Header Left"
+msgstr ""
+
+#: autos/inc/customizer/header.php:151
+msgid "Header Right"
+msgstr ""
+
+#: autos/inc/template-functions.php:40
+msgid " <p>Page: "
+msgstr ""
+
+#: autos/inc/template-functions.php:42
+msgid "Next page"
+msgstr ""
+
+#: autos/inc/template-functions.php:43
+msgid "Previous page"
+msgstr ""
+
+#: autos/inc/template-functions.php:58
+msgid "<span class=\"fa fa-tags tag\"></span> Tags : %1$s"
+msgstr ""
+
+#: autos/inc/template-functions.php:84
+msgid "<span class=\"date_published\"><img src=\"http://autos.io/wp-content/uploads/2018/12/clock.png\" class=\"icon-clock\"></span> %1$s"
+msgstr ""
+
+#: autos/inc/template-functions.php:91
+msgid "Leave a comment"
+msgstr ""
+
+#: autos/inc/template-functions.php:92
+msgid "One comment"
+msgstr ""
+
+#: autos/inc/template-functions.php:93
+msgid "% comments"
+msgstr ""
+
+#: autos/inc/template-functions.php:94
+msgid "Read all comments"
+msgstr ""
+
+#: autos/inc/template-functions.php:110
+msgid "<"
+msgstr ""
+
+#: autos/inc/template-functions.php:111
+msgid ">"
+msgstr ""
+
+#: autos/inc/template-functions.php:136
+msgid "CONTINUE READING"
+msgstr ""
+
+#: autos/sidebar.php:5
+msgid "This is sidebar. You have to add some widgets"
+msgstr ""
+
+#: autos/template-parts/content-image.php:8
+msgid "This image post contains %1$s photo"
+msgstr ""
+
+#: autos/template-parts/content-none.php:2
+msgid "Nothing post found"
+msgstr ""
+
+#: autos/templates/contact.php:3
+msgid "Contact"
+msgstr ""
+
+#: autos/templates/full-width.php:2
+msgid "Full Width"
+msgstr ""

@@ -1,0 +1,1 @@
+<?php$class = '';if ( ! is_singular( 'post' ) ) {    $class = 'col-md-9';}?><article id="post- <?php the_ID(); ?>" <?php post_class( $class ); ?>>    <div class="blog-follow">        <?php do_action( 'autos_post' ); ?>    </div></article>
