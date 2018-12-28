@@ -11,7 +11,7 @@ define( 'THEME_DIR', get_template_directory() . '/' );
 require_once THEME_DIR . 'inc/template-functions.php';
 require_once THEME_DIR . 'inc/template-hooks.php';
 require_once THEME_DIR . 'inc/customizer.php';
-require_once THEME_DIR . 'inc/widgets/class-widget-flickr-gallery.php';
+require_once THEME_DIR . 'inc/widgets/class-widget-recent-post-thumbnail.php';
 
 
 /* @ Thiet lap chieu rong noi dung */ 
@@ -37,9 +37,9 @@ if ( ! function_exists( 'autos_theme_setup' ) ) {
 
 
 
-        // Them widget cho nguoi dung
+        // Them Widget Autos_Recent_Post_Thumnbail cho nguoi dung
         function wpb_load_widget() {
-            register_widget( 'Flickr_Gallery_Widget' );
+            register_widget( 'Autos_Recent_Post_Thumnbail' );
         }
         add_action( 'widgets_init', 'wpb_load_widget' );         
         
@@ -252,16 +252,35 @@ if ( ! function_exists( 'autos_logo_footer' ) ) {
     }
 }
 
+// background_header_image Color
+if ( !function_exists( 'background_header_image' ) ) {
+    function background_header_image() {
+        $color = get_option( 'background_header_image', '#2a47ed' );
+        $style = 'color: ' . $color .';';
+        echo $style;
+    }
+}
+
+// Color Blog Title
+if ( ! function_exists( 'blog_title_style' ) ) {
+    function blog_title_style() {
+        $color    = get_option( 'blog_color', '#000' );
+
+        $style = 'color: ' . $color . ';';
+        echo $style;
+    }
+}
+
 // thay ten title trang single cho trang blog 
 if ( ! function_exists( 'autos_title_blog' ) ) {
     function autos_title_blog() {
-        $title     = get_option( 'blog_title', 'Our Blog' );
+        $title     = get_option( 'blog_title' );
         if ( is_singular( 'post' ) ) {
             $title = get_the_title();
         }
         ?>
         <div class="block">
-            <h1 class="blog-title">
+            <h1 class="blog-title" style="<?php blog_title_style(); ?>">
                 <?php echo wp_kses_post( $title ); ?>
             </h1>
         </div>
@@ -269,15 +288,28 @@ if ( ! function_exists( 'autos_title_blog' ) ) {
     }
 }
 
-// Thay image backgorund Hearder.
+// Thay image background Hearder.
 if ( ! function_exists( 'autos_page_header_background' ) ) {
     function autos_page_header_background() {
         $bg_header = get_option( 'page_header_background' );
-        $img_src = THEME_URI . 'assets/images/toyota-car-tuning.jpg';
-        if ( false == $bg_header ) {
-            $bg_header = $img_src;
+        $color     = get_option( 'background_header_image', '#2a47ed' );
+        $style     = 'background-color: ' . $color . ';';
+
+        if ( false != $bg_header ) {
+            $style .= 'background-image: url(' . $bg_header . ')';
         }
-        echo 'background-image: url(' . $bg_header . ')';
+
+        echo $style;
+    }
+}
+
+// Color Blog Title
+if ( ! function_exists( 'blog_title_style' ) ) {
+    function blog_title_style() {
+        $color    = get_option( 'blog_color', '#000' );
+
+        $style = 'color: ' . $color . ';';
+        echo $style;
     }
 }
 

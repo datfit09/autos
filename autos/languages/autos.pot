@@ -79,11 +79,11 @@ msgstr ""
 msgid "Logo Image Footer"
 msgstr ""
 
-#: autos/functions.php:344
+#: autos/functions.php:376
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: autos/functions.php:363
+#: autos/functions.php:395
 msgid "Edit"
 msgstr ""
 
@@ -91,24 +91,28 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: autos/inc/customizer/blog.php:28, autos/inc/customizer/blog.php:54
+#: autos/inc/customizer/blog.php:27, autos/inc/customizer/blog.php:76
 msgid "Blog Title"
 msgstr ""
 
-#: autos/inc/customizer/footer.php:30
-msgid "Color"
+#: autos/inc/customizer/blog.php:52
+msgid "Color blog"
 msgstr ""
 
-#: autos/inc/customizer/footer.php:54, autos/inc/customizer/header.php:83
-msgid "Background Color"
+#: autos/inc/customizer/footer.php:30
+msgid "Color first"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:54
+msgid "Background Color first"
 msgstr ""
 
 #: autos/inc/customizer/footer.php:78
-msgid "Color End"
+msgid "Color 2nd"
 msgstr ""
 
 #: autos/inc/customizer/footer.php:102
-msgid "Background Color End"
+msgid "Background Color 2nd"
 msgstr ""
 
 #: autos/inc/customizer/footer.php:126
@@ -135,15 +139,19 @@ msgstr ""
 msgid "Page header"
 msgstr ""
 
-#: autos/inc/customizer/header.php:105
+#: autos/inc/customizer/header.php:83
+msgid "Background Color"
+msgstr ""
+
+#: autos/inc/customizer/header.php:106
 msgid "Background"
 msgstr ""
 
-#: autos/inc/customizer/header.php:128
+#: autos/inc/customizer/header.php:129
 msgid "Header Left"
 msgstr ""
 
-#: autos/inc/customizer/header.php:151
+#: autos/inc/customizer/header.php:152
 msgid "Header Right"
 msgstr ""
 
@@ -163,60 +171,55 @@ msgstr ""
 msgid "<span class=\"fa fa-tags tag\"></span> Tags : %1$s"
 msgstr ""
 
-#: autos/inc/template-functions.php:84
-msgid "<span class=\"date_published\"><img src=\"http://autos.io/wp-content/uploads/2018/12/clock.png\" class=\"icon-clock\"></span> %1$s"
+#: autos/inc/template-functions.php:86
 msgstr ""
 
-#: autos/inc/template-functions.php:91
+#: autos/inc/template-functions.php:96
 msgid "Leave a comment"
 msgstr ""
 
-#: autos/inc/template-functions.php:92
+#: autos/inc/template-functions.php:97
 msgid "One comment"
 msgstr ""
 
-#: autos/inc/template-functions.php:93
+#: autos/inc/template-functions.php:98
 msgid "% comments"
 msgstr ""
 
-#: autos/inc/template-functions.php:94
+#: autos/inc/template-functions.php:99
 msgid "Read all comments"
 msgstr ""
 
-#: autos/inc/template-functions.php:110
+#: autos/inc/template-functions.php:115
 msgid "<"
 msgstr ""
 
-#: autos/inc/template-functions.php:111
+#: autos/inc/template-functions.php:116
 msgid ">"
 msgstr ""
 
-#: autos/inc/template-functions.php:136
+#: autos/inc/template-functions.php:141
 msgid "CONTINUE READING"
 msgstr ""
 
-#: autos/inc/widgets/class-widget-flickr-gallery.php:7
+#: autos/inc/widgets/class-widget-recent-post-thumbnail.php:7
 msgid "First Widget"
 msgstr ""
 
-#: autos/inc/widgets/class-widget-flickr-gallery.php:9
-msgid "Sample widget based on First Widget"
+#: autos/inc/widgets/class-widget-recent-post-thumbnail.php:9
+msgid "Sample widget based on Recent Post Thumnbail"
 msgstr ""
 
-#: autos/inc/widgets/class-widget-flickr-gallery.php:16
-msgid "My First Widget"
+#: autos/inc/widgets/class-widget-recent-post-thumbnail.php:16
+msgid "Recent Post Thumnbail"
 msgstr ""
 
-#: autos/inc/widgets/class-widget-flickr-gallery.php:17
-msgid "Hello"
+#: autos/inc/widgets/class-widget-recent-post-thumbnail.php:26
+msgid "Number"
 msgstr ""
 
-#: autos/inc/widgets/class-widget-flickr-gallery.php:26, autos/inc/widgets/class-widget-flickr-gallery.php:49
-msgid "Flickr ID"
-msgstr ""
-
-#: autos/inc/widgets/class-widget-flickr-gallery.php:48
-msgid "Title"
+#: autos/inc/widgets/class-widget-recent-post-thumbnail.php:73
+msgid "Thumbnail image"
 msgstr ""
 
 #: autos/search.php:13
