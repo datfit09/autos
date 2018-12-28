@@ -11,29 +11,40 @@
     <header class="header">
         <div class="top-bar">
             <div class="container">
-                <div class="header-login">
-                    <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
-                </div>
-                <div class="header-contact">
-                    <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
-                </div>
+                <?php
+                    $left = get_option( 'topbar_left' );
+                    $right = get_option( 'topbar_right' );
+                    if ( '' != $left || '' != $right ) {
+                        ?><div class="header-login">
+                            <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
+                        </div>
+                        <div class="header-contact">
+                            <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
+                        </div>
+                    <?php }
+                ?>
             </div>
         </div>
 
         <div class="topnav">
             <div class="container">
-                <?php autos_logo(); ?>
+                <div class="topnav-wrapper">
+                    <?php autos_logo(); ?>
 
-                <div class="menu">
-                    <?php autos_menu( 'primary-menu' ); ?>
+                    <div class="menu">
+                        <?php autos_menu( 'primary-menu' ); ?>
+                    </div>
+
+                    <?php autos_search(); ?>
+                    
+                    <div class="search-form">
+                        <?php get_template_part( 'template/search' ); ?>
+                    </div>
+
+                    <button class="toggle-menu-btn fa fa-bars"></button>
+
+                    <?php hotline(); ?>
                 </div>
-                <button class="fa fa-search search-button"></button>
-
-                <button class="toggle-menu-btn fa fa-bars"></button>
-
-                <?php hotline(); ?>
-
-                <div class="menu-overlay"></div>
             </div>
         </div>
 

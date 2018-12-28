@@ -13,20 +13,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: autos/404.php:11
+#: autos/404.php:10
 msgid "<h2>404 NOT FOUND</h2>"
 msgstr ""
 
-#: autos/404.php:12
+#: autos/404.php:11
 msgid "<p>The article you were looking for was not found, but maybe try looking again!</p>"
-msgstr ""
-
-#: autos/404.php:14
-msgid "<h3>Content catagory</h3>"
-msgstr ""
-
-#: autos/404.php:19
-msgid "Tag Cloud"
 msgstr ""
 
 #. translators: %s: post title
@@ -47,51 +39,51 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: autos/functions.php:79
+#: autos/functions.php:89
 msgid "Primary Menu"
 msgstr ""
 
-#: autos/functions.php:144
+#: autos/functions.php:131
 msgid "Post tagged: %1$s"
 msgstr ""
 
-#: autos/functions.php:146
+#: autos/functions.php:133
 msgid "Post categorized: %1$s"
 msgstr ""
 
-#: autos/functions.php:148
+#: autos/functions.php:135
 msgid "Daily Archives: %1$s"
 msgstr ""
 
-#: autos/functions.php:220
+#: autos/functions.php:207
 msgid "Main Sidebar"
 msgstr ""
 
-#: autos/functions.php:222
+#: autos/functions.php:209
 msgid "Widgets in this area will be shown on all posts and pages."
 msgstr ""
 
-#: autos/functions.php:232
+#: autos/functions.php:219
 msgid "Footer Widget"
 msgstr ""
 
-#: autos/functions.php:234
+#: autos/functions.php:221
 msgid "Widgets in this area will be shown on foooter."
 msgstr ""
 
-#: autos/functions.php:250
+#: autos/functions.php:241
 msgid "Logo Image"
 msgstr ""
 
-#: autos/functions.php:260
+#: autos/functions.php:251
 msgid "Logo Image Footer"
 msgstr ""
 
-#: autos/functions.php:340
+#: autos/functions.php:344
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: autos/functions.php:359
+#: autos/functions.php:363
 msgid "Edit"
 msgstr ""
 
@@ -112,10 +104,18 @@ msgid "Background Color"
 msgstr ""
 
 #: autos/inc/customizer/footer.php:78
-msgid "Footer Left"
+msgid "Color End"
 msgstr ""
 
 #: autos/inc/customizer/footer.php:102
+msgid "Background Color End"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:126
+msgid "Footer Left"
+msgstr ""
+
+#: autos/inc/customizer/footer.php:151
 msgid "Footer right"
 msgstr ""
 
@@ -151,11 +151,11 @@ msgstr ""
 msgid " <p>Page: "
 msgstr ""
 
-#: autos/inc/template-functions.php:42
+#: autos/inc/template-functions.php:42, autos/search.php:25
 msgid "Next page"
 msgstr ""
 
-#: autos/inc/template-functions.php:43
+#: autos/inc/template-functions.php:43, autos/search.php:24
 msgid "Previous page"
 msgstr ""
 
@@ -195,11 +195,43 @@ msgstr ""
 msgid "CONTINUE READING"
 msgstr ""
 
+#: autos/inc/widgets/class-widget-flickr-gallery.php:7
+msgid "First Widget"
+msgstr ""
+
+#: autos/inc/widgets/class-widget-flickr-gallery.php:9
+msgid "Sample widget based on First Widget"
+msgstr ""
+
+#: autos/inc/widgets/class-widget-flickr-gallery.php:16
+msgid "My First Widget"
+msgstr ""
+
+#: autos/inc/widgets/class-widget-flickr-gallery.php:17
+msgid "Hello"
+msgstr ""
+
+#: autos/inc/widgets/class-widget-flickr-gallery.php:26, autos/inc/widgets/class-widget-flickr-gallery.php:49
+msgid "Flickr ID"
+msgstr ""
+
+#: autos/inc/widgets/class-widget-flickr-gallery.php:48
+msgid "Title"
+msgstr ""
+
+#: autos/search.php:13
+msgid "Search Results for: %s"
+msgstr ""
+
+#: autos/search.php:26
+msgid "Page"
+msgstr ""
+
 #: autos/sidebar.php:5
 msgid "This is sidebar. You have to add some widgets"
 msgstr ""
 
-#: autos/template-parts/content-image.php:8
+#: autos/template-parts/content-image.php:14
 msgid "This image post contains %1$s photo"
 msgstr ""
 

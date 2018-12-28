@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="content">
-                <div class="col-md-8 blog">
+                <div class="col-md-9 blog">
                     <div id="main-content">
                         <?php
                         if( have_posts() ) :
@@ -17,8 +17,8 @@
                                     comments_template();
                                 }
                             endwhile;
-
-                            do_action( 'after_loop' );
+                            
+                            autos_pagination();
 
                         else:
                             get_template_part( 'template-parts/content', 'none' );
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <div id="sidebar" class="col-md-4 slide-bar">
+                <div id="sidebar" class="col-md-3 side-bar">
                     <?php get_sidebar(); ?>
                 </div>
             </div>

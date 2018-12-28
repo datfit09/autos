@@ -1,7 +1,7 @@
 <?php
 $class = '';
 if ( ! is_singular( 'post' ) ) {
-    $class = 'col-md-9';
+    $class = 'col-md-6';
 }
 ?>
 

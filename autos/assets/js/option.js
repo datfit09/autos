@@ -46,3 +46,29 @@ function toggleMenu() {
         }
     });
 })();
+
+/*Modal search*/
+
+(function modal() {
+    var modal    = document.querySelector( '.modal' ),
+        btn      = document.querySelector( '.demo-btn' ),
+        closeBtn = document.querySelectorAll( '.modal-close' ),
+        saveBtn  = document.querySelector( '.modal-save' );
+ 
+    btn.addEventListener( 'click', function( e ) {
+        e.preventDefault();
+
+        document.body.classList.add( 'modal-open' );
+    } );
+
+    closeBtn.forEach( function( ele ) {
+        ele.addEventListener( 'click', function() {
+            document.body.classList.remove( 'modal-open' );
+
+            if ( ele.classList.contains( 'modal-save' ) ) {
+                var url = btn.href;
+                window.location = url;
+            }
+        } );
+    });
+})();

@@ -11,6 +11,7 @@ define( 'THEME_DIR', get_template_directory() . '/' );
 require_once THEME_DIR . 'inc/template-functions.php';
 require_once THEME_DIR . 'inc/template-hooks.php';
 require_once THEME_DIR . 'inc/customizer.php';
+require_once THEME_DIR . 'inc/widgets/class-widget-flickr-gallery.php';
 
 
 /* @ Thiet lap chieu rong noi dung */ 
@@ -33,6 +34,15 @@ if ( ! function_exists( 'autos_theme_setup' ) ) {
 
         /* Them post thumbnail */
         add_theme_support( 'post-thumbnails' );
+
+
+
+        // Them widget cho nguoi dung
+        function wpb_load_widget() {
+            register_widget( 'Flickr_Gallery_Widget' );
+        }
+        add_action( 'widgets_init', 'wpb_load_widget' );         
+        
 
 
         /* Them custumer logo */
@@ -81,59 +91,36 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-/* --------------Template function--------------------------- */
-
-if ( ! function_exists( 'autos_header' ) ){
-    function autos_header() { ?>
-        <div class="site-name">
-            <?php 
-                if ( is_home() ){
-                    printf( 
-                        '<h1> <a href="%1$s" title="%2$s"> %3$s </a></h1>',
-                        get_bloginfo( 'url' ),
-                        get_bloginfo( 'description' ),
-                        get_bloginfo( 'sitename' )
-                    );
-                } else {
-                    printf( 
-                        '<p> <a href="%1$s" title="%2$s"> %3$s </a> </p>',
-                        get_bloginfo( 'url' ),
-                        get_bloginfo( 'description' ),
-                        get_bloginfo( 'sitename' )
-                    );
-                }
-            ?>
-        </div>
-        <div class="site-description">
-            <?php bloginfo( 'description' ); ?>
-        </div> <?php
-    }
-}
-
 /*-----------------Thiet lap menu ------------------------------*/
 
 if ( ! function_exists( 'autos_menu' ) ) {
     function autos_menu( $menu ) {
         $menu = array(
-            'theme_location'  => $menu,
-            'container'       => 'nav',
-            'container_class' => $menu,
-            'items_wrap'      => '<ul id="%1$s" class="%2$s"> %3$s </ul>'
+            'theme_location' => $menu,
+            'container'      => 'nav',
+            'menu_class'     => 'primary-menu menu',
         );
         wp_nav_menu( $menu );
     }
 }
 
+// Tao form search
+if ( ! function_exists( 'autos_search' ) ) {
+    function autos_search() {
+        ?>
+        <button class="fa fa-search search-button demo-btn"></button>
+        <?php
+    }
+}
 
 /*Ham hien thi thumbnail*/
 if ( !function_exists( 'autos_thumbnail' ) ) {
     function autos_thumbnail( $size ) {
-        if ( !is_single() && has_post_thumbnail() && post_password_required() || has_post_format( 'image' ) ) : ?>
+        if ( ! is_single() && has_post_thumbnail() && post_password_required() || has_post_format( 'image' ) ) : ?>
         <figure class="post_thumbnail"> <?php the_post_thumbnail( $size ); ?> </figure>
         <?php endif; ?>
     <?php }
 }
-
 
 if ( ! function_exists( 'autos_category' ) ) {
     function autos_category() {
@@ -242,12 +229,16 @@ function theme_slug_widgets_init() {
 
 if ( ! function_exists( 'autos_logo' ) ) {
     function autos_logo() {
-        $id  = get_theme_mod( 'custom_logo' );
-        $img = wp_get_attachment_image_src( $id, 'full' );
+        $id      = get_theme_mod( 'custom_logo' );
+        $img     = wp_get_attachment_image_src( $id, 'full' );
+        $img_src = THEME_URI . 'assets/images/logo.jpg';
+        if ( false != $img ) {
+            $img_src = $img[0];
+        }
         ?>
         <h2 class="logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php esc_attr__( 'Logo Image', 'autos' ); ?>">
+                <img src="<?php echo esc_url( $img_src ); ?>" alt="<?php esc_attr__( 'Logo Image', 'autos' ); ?>">
             </a>
         </h2>
         <?php
@@ -264,28 +255,28 @@ if ( ! function_exists( 'autos_logo_footer' ) ) {
 // thay ten title trang single cho trang blog 
 if ( ! function_exists( 'autos_title_blog' ) ) {
     function autos_title_blog() {
-        $title     = get_option( 'blog_title' );
-        $sub_title = get_option( 'meta_title' );
+        $title     = get_option( 'blog_title', 'Our Blog' );
         if ( is_singular( 'post' ) ) {
             $title = get_the_title();
         }
         ?>
         <div class="block">
             <h1 class="blog-title">
-                <?php echo esc_html( $title ); ?>
+                <?php echo wp_kses_post( $title ); ?>
             </h1>
-            <h2 class="index-title">
-                <?php echo esc_html( $sub_title ); ?>
-            </h2>
         </div>
         <?php
     }
 }
 
-// Thay image backgorund Hearder
+// Thay image backgorund Hearder.
 if ( ! function_exists( 'autos_page_header_background' ) ) {
     function autos_page_header_background() {
         $bg_header = get_option( 'page_header_background' );
+        $img_src = THEME_URI . 'assets/images/toyota-car-tuning.jpg';
+        if ( false == $bg_header ) {
+            $bg_header = $img_src;
+        }
         echo 'background-image: url(' . $bg_header . ')';
     }
 }
@@ -303,6 +294,19 @@ if ( ! function_exists( 'footer_style' ) ) {
     function footer_style() {
         $color    = get_option( 'footer_color' );
         $bg_color = get_option( 'footer_background' );
+
+        $style = 'color: ' . $color . ';';
+        $style .= 'background-color: ' . $bg_color;
+
+        echo $style;
+    }
+}
+
+// Footer End style
+if ( ! function_exists( 'footer_end_style' ) ) {
+    function footer_end_style() {
+        $color    = get_option( 'footer_end_color', '#000' );
+        $bg_color = get_option( 'footer_end_background', '#f5f5f5' );
 
         $style = 'color: ' . $color . ';';
         $style .= 'background-color: ' . $bg_color;
