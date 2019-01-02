@@ -1,4 +1,4 @@
-# Copyright (C) 2018 Haintheme
+# Copyright (C) 2019 Haintheme
 # This file is distributed under the same license as the Haintheme package.
 msgid ""
 msgstr ""
@@ -39,51 +39,51 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: autos/functions.php:89
+#: autos/functions.php:85
 msgid "Primary Menu"
 msgstr ""
 
-#: autos/functions.php:131
+#: autos/functions.php:127
 msgid "Post tagged: %1$s"
 msgstr ""
 
-#: autos/functions.php:133
+#: autos/functions.php:129
 msgid "Post categorized: %1$s"
 msgstr ""
 
-#: autos/functions.php:135
+#: autos/functions.php:131
 msgid "Daily Archives: %1$s"
 msgstr ""
 
-#: autos/functions.php:207
+#: autos/functions.php:203
 msgid "Main Sidebar"
 msgstr ""
 
-#: autos/functions.php:209
+#: autos/functions.php:205
 msgid "Widgets in this area will be shown on all posts and pages."
 msgstr ""
 
-#: autos/functions.php:219
+#: autos/functions.php:215
 msgid "Footer Widget"
 msgstr ""
 
-#: autos/functions.php:221
+#: autos/functions.php:217
 msgid "Widgets in this area will be shown on foooter."
 msgstr ""
 
-#: autos/functions.php:241
+#: autos/functions.php:239
 msgid "Logo Image"
 msgstr ""
 
-#: autos/functions.php:251
+#: autos/functions.php:250
 msgid "Logo Image Footer"
 msgstr ""
 
-#: autos/functions.php:376
+#: autos/functions.php:375
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: autos/functions.php:395
+#: autos/functions.php:394
 msgid "Edit"
 msgstr ""
 
@@ -159,11 +159,11 @@ msgstr ""
 msgid " <p>Page: "
 msgstr ""
 
-#: autos/inc/template-functions.php:42, autos/search.php:25
+#: autos/inc/template-functions.php:42, autos/search.php:23
 msgid "Next page"
 msgstr ""
 
-#: autos/inc/template-functions.php:43, autos/search.php:24
+#: autos/inc/template-functions.php:43, autos/search.php:22
 msgid "Previous page"
 msgstr ""
 
@@ -222,11 +222,11 @@ msgstr ""
 msgid "Thumbnail image"
 msgstr ""
 
-#: autos/search.php:13
+#: autos/search.php:12
 msgid "Search Results for: %s"
 msgstr ""
 
-#: autos/search.php:26
+#: autos/search.php:24
 msgid "Page"
 msgstr ""
 

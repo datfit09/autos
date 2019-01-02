@@ -28,15 +28,15 @@
 <div class="modal">
     <div class="modal-view">
         <div class="modal-header">
-            <div class="modal-title">Search Page</div>
+            <div class="modal-title"><?php echo wp_kses_post( 'Search Page' , 'autos' ); ?></div>
             <button class="modal-close">x</button>
         </div>
         <div class="modal-content">
             <?php get_search_form(); ?>
         </div>
         <div class="modal-action">
-            <button class="btn modal-close">Close</button>
-            <button class="btn modal-close modal-save">Search</button>
+            <button class="btn modal-close"><?php echo wp_kses_post( 'Close' , 'autos' ); ?></button>
+            <button class="btn modal-close modal-save"><?php echo wp_kses_post( 'Search' , 'autos' ); ?></button>
         </div>
     </div>
 </div>

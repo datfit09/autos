@@ -7,7 +7,7 @@ if ( ! is_singular( 'post' ) ) {
 
 <article id="post- <?php the_ID(); ?>" <?php post_class( $class ); ?>>
     <?php
-    /*
+    /**
     *autos_post_thumbnail', 10
     *autos_post_title', 20
     *autos_entry_meta', 30

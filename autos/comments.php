@@ -54,14 +54,11 @@ if ( post_password_required() ) {
     <?php
     endif;
 
-    $author = '<p class="comment-form-author">' . '<input id="author" placeholder="Name *" name="author" type="text" value="' .
-                esc_attr( $commenter['comment_author'] ) . ' required /></p>';
-    $email = '<p class="comment-form-email">' . '<input id="email" placeholder="Email address *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-                    ' required /></p>';
-    $url = '<p class="comment-form-url">' .
-                 '<input id="url" name="url" placeholder="http://your-site-name.com" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></p>';
-
-    $args = array(
+    $author = '<p class="comment-form-author"><input id="author" placeholder="Name *" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" required /></p>';
+    $email  = '<p class="comment-form-email"><input id="email" placeholder="Email address *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required /></p>';
+    $url    = '<p class="comment-form-url"><input id="url" name="url" placeholder="http://your-site-name.com" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></p>';
+    
+    $args   = array(
         'fields' => apply_filters(
             'comment_form_default_fields',
             array(

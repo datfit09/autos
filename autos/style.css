@@ -898,6 +898,8 @@ dd {
 
 .icon-clock, .icon-comment {
   margin-right: 5px;
+  float: left;
+  margin-top: 7px;
 }
 
 .excerpt {
@@ -1441,12 +1443,22 @@ article {
 
 .share .social {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #f6f6f6;
   width: 80px;
   height: 220px;
+}
+
+@media (max-width: 991px) {
+  .share .social {
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
 }
 
 .social-button-content {
@@ -1466,10 +1478,6 @@ article {
 }
 
 /* search form */
-.search {
-  width: 50%;
-}
-
 .title {
   font-family: "DroidSerif";
   text-transform: uppercase;
@@ -1506,15 +1514,15 @@ article {
 
 #searchsubmit {
   position: absolute;
-  content: "";
-  height: 40px;
-  width: 40px;
   top: 0;
   right: 0;
+  content: "";
   font-size: 0;
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  height: 40px;
+  width: 40px;
   z-index: 2;
 }
 
@@ -1553,16 +1561,6 @@ article {
 .widget_meta .children li,
 .widget_nav_menu .children li {
   border-top: 1px dotted #e2e2e2;
-}
-
-@media (max-width: 991px) {
-  .share .social {
-    flex-direction: row;
-    height: 50px;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: transparent;
-  }
 }
 
 .widget_text {
@@ -1648,8 +1646,8 @@ article {
 
 .email-footer .button-form .rss {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: absolute;
   top: 17px;
   right: 23px;
@@ -1739,7 +1737,7 @@ article {
 
 .top-bar .header-login, .top-bar .header-contact {
   font-family: "Roboto Condensed";
-  color: #888888;
+  color: #888;
   font-size: 13px;
   padding: 15px 0;
 }
@@ -1809,15 +1807,21 @@ article {
   transform: 0.3s;
 }
 
+@media (max-width: 991px) {
+  .hotline {
+    display: none;
+  }
+}
+
 .hotline a {
   background-color: #23aaff;
   width: 247px;
   height: 100px;
   margin-left: 30px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 
 .hotline a .phone {
@@ -1828,8 +1832,8 @@ article {
   height: 40px;
   width: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-right: 20px;
 }
 
@@ -1858,6 +1862,12 @@ article {
   width: 25px;
   height: 25px;
   background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .search-button {
+    display: none;
+  }
 }
 
 .page-header {
@@ -2004,8 +2014,8 @@ article {
   opacity: 0;
   transition-duration: 0.3s;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .modal-view {
@@ -2060,15 +2070,6 @@ article {
 .btn:hover {
   background-color: #b1aaaa;
   color: #000;
-}
-
-@media (max-width: 991px) {
-  .hotline {
-    display: none;
-  }
-  .search-button {
-    display: none;
-  }
 }
 
 @media (max-width: 1200px) {

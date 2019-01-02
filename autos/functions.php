@@ -1,51 +1,47 @@
 <?php 
-/*
-Khai bao hang gia tri
-    @ THEME_URI = lay duong dan thu muc theme
-    @ CORE = lay duong dan thu muc /core
+/**
+*THEME_URI = lay duong dan thu muc theme.
 */
 define( 'THEME_URI', get_template_directory_uri() . '/' );
 define( 'THEME_DIR', get_template_directory() . '/' );
 
-// Chi duong dan do_action den Template hooks 
+// Chi duong dan do_action den Template hooks.
 require_once THEME_DIR . 'inc/template-functions.php';
 require_once THEME_DIR . 'inc/template-hooks.php';
 require_once THEME_DIR . 'inc/customizer.php';
 require_once THEME_DIR . 'inc/widgets/class-widget-recent-post-thumbnail.php';
 
 
-/* @ Thiet lap chieu rong noi dung */ 
+//Thiet lap chieu rong noi dung.
 if ( ! isset( $content_with ) ) {
     $content_with = 1200;
 }
 
 /*
-@ Khai bao chuc nang cua theme
+*Khai bao chuc nang cua theme.
 */ 
 if ( ! function_exists( 'autos_theme_setup' ) ) {
     function autos_theme_setup() {
 
-        /* Thiet lap textdomain */ 
+        // Thiet lap textdomain.
         $language_folder = THEME_DIR . 'language';
         load_theme_textdomain( 'autos', $language_folder );
 
-        /* Tu dong them link RSS len <header> */
+        // Tu dong them link RSS len <header>.
         add_theme_support( 'automatic-feed-links' );
 
-        /* Them post thumbnail */
+        // Them post thumbnail.
         add_theme_support( 'post-thumbnails' );
 
 
 
-        // Them Widget Autos_Recent_Post_Thumnbail cho nguoi dung
+        // Them Widget Autos_Recent_Post_Thumnbail cho nguoi dung.
         function wpb_load_widget() {
             register_widget( 'Autos_Recent_Post_Thumnbail' );
         }
         add_action( 'widgets_init', 'wpb_load_widget' );         
         
-
-
-        /* Them custumer logo */
+        // Them custumer logo.
         add_theme_support(
             'custom-logo' ,
             array(
@@ -57,7 +53,7 @@ if ( ! function_exists( 'autos_theme_setup' ) ) {
             )
         );
 
-        /* Post formats */
+        // Post formats.
         add_theme_support( 'post-formats' , array(
             'aside',
             'image',
@@ -70,10 +66,10 @@ if ( ! function_exists( 'autos_theme_setup' ) ) {
             'chat',
         ) );
 
-        /* Them title-tag */
+        // Them title-tag.
         add_theme_support( 'title-tag' );
 
-        /* Them custom background */
+        // Them custom background.
         $default_background = array(
             'default_background' => '#e8e8e8',
         );
@@ -83,7 +79,7 @@ if ( ! function_exists( 'autos_theme_setup' ) ) {
 }
 
 
-/* Them menu */
+// Them menu.
 function register_my_menus() {
   register_nav_menus(
     array('primary-menu' => __( 'Primary Menu', 'autos' ) )
@@ -91,8 +87,7 @@ function register_my_menus() {
 }
 add_action( 'init', 'register_my_menus' );
 
-/*-----------------Thiet lap menu ------------------------------*/
-
+// Option menu.
 if ( ! function_exists( 'autos_menu' ) ) {
     function autos_menu( $menu ) {
         $menu = array(
@@ -104,7 +99,7 @@ if ( ! function_exists( 'autos_menu' ) ) {
     }
 }
 
-// Tao form search
+// Tao form search.
 if ( ! function_exists( 'autos_search' ) ) {
     function autos_search() {
         ?>
@@ -113,7 +108,7 @@ if ( ! function_exists( 'autos_search' ) ) {
     }
 }
 
-/*Ham hien thi thumbnail*/
+// Ham hien thi thumbnail.
 if ( !function_exists( 'autos_thumbnail' ) ) {
     function autos_thumbnail( $size ) {
         if ( ! is_single() && has_post_thumbnail() && post_password_required() || has_post_format( 'image' ) ) : ?>
@@ -122,6 +117,7 @@ if ( !function_exists( 'autos_thumbnail' ) ) {
     <?php }
 }
 
+// Category.
 if ( ! function_exists( 'autos_category' ) ) {
     function autos_category() {
         ?>
@@ -150,7 +146,7 @@ if ( ! function_exists( 'autos_category' ) ) {
     }
 }
 
-/*autos_entry_header = hien thi tieu de post*/
+// autos_entry_header = hien thi tieu de post.
 if ( ! function_exists( 'autos_entry_header' ) ) {
     function autos_entry_header() { ?>
         <?php if ( is_single() ) : ?>
@@ -162,8 +158,8 @@ if ( ! function_exists( 'autos_entry_header' ) ) {
 }
 
 /**
-@ Chèn CSS và Javascript vào theme
-@ sử dụng hook wp_enqueue_scripts() để hiển thị nó ra ngoài front-end
+* Chèn CSS và Javascript vào theme
+* sử dụng hook wp_enqueue_scripts() để hiển thị nó ra ngoài front-end
 **/
 function autos_styles() {
     /*
@@ -171,13 +167,13 @@ function autos_styles() {
      * Nếu sử dụng child theme, thì file style.css này vẫn load ra từ theme mẹ
      */
 
-    /* font-awesome-min css */
+    // font-awesome-min css.
     wp_enqueue_style(
         'font-awesome',
         THEME_URI . 'assets/css/font-awesome.min.css'
     );
 
-    /* option.js script */
+    // option.js script.
     wp_enqueue_script( 
         'option' , 
         THEME_URI . 'assets/js/option.js' , 
@@ -188,7 +184,7 @@ function autos_styles() {
 
 
     if( is_singular() && comments_open() && ( 1 == get_option( 'thread_comments' ) ) ) {
-        // Load comment-reply.js (into footer)
+        // Load comment-reply.js (into footer).
         wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
     }
 
@@ -227,6 +223,8 @@ function theme_slug_widgets_init() {
     );
 }
 
+
+// Logo Menu.
 if ( ! function_exists( 'autos_logo' ) ) {
     function autos_logo() {
         $id      = get_theme_mod( 'custom_logo' );
@@ -245,6 +243,7 @@ if ( ! function_exists( 'autos_logo' ) ) {
     }
 }
 
+// Logo Footer.
 if ( ! function_exists( 'autos_logo_footer' ) ) {
     function autos_logo_footer() {
         $imgft  = get_option( 'footer_logo_image' );
@@ -252,7 +251,7 @@ if ( ! function_exists( 'autos_logo_footer' ) ) {
     }
 }
 
-// background_header_image Color
+// background_header_image Color.
 if ( !function_exists( 'background_header_image' ) ) {
     function background_header_image() {
         $color = get_option( 'background_header_image', '#2a47ed' );
@@ -261,7 +260,7 @@ if ( !function_exists( 'background_header_image' ) ) {
     }
 }
 
-// Color Blog Title
+// Color Blog Title.
 if ( ! function_exists( 'blog_title_style' ) ) {
     function blog_title_style() {
         $color    = get_option( 'blog_color', '#000' );
@@ -271,7 +270,7 @@ if ( ! function_exists( 'blog_title_style' ) ) {
     }
 }
 
-// thay ten title trang single cho trang blog 
+// thay ten title trang single cho trang blog.
 if ( ! function_exists( 'autos_title_blog' ) ) {
     function autos_title_blog() {
         $title     = get_option( 'blog_title' );
@@ -303,7 +302,7 @@ if ( ! function_exists( 'autos_page_header_background' ) ) {
     }
 }
 
-// Color Blog Title
+// Color Blog Title.
 if ( ! function_exists( 'blog_title_style' ) ) {
     function blog_title_style() {
         $color    = get_option( 'blog_color', '#000' );
@@ -313,7 +312,7 @@ if ( ! function_exists( 'blog_title_style' ) ) {
     }
 }
 
-// Hotline
+// Hotline.
 if ( ! function_exists( 'hotline' ) ) {
     function hotline() {
         $hotline = get_option( 'hotline' );
@@ -321,7 +320,7 @@ if ( ! function_exists( 'hotline' ) ) {
     }
 }
 
-// Footer style
+// Footer style.
 if ( ! function_exists( 'footer_style' ) ) {
     function footer_style() {
         $color    = get_option( 'footer_color' );
@@ -334,7 +333,7 @@ if ( ! function_exists( 'footer_style' ) ) {
     }
 }
 
-// Footer End style
+// Footer End style.
 if ( ! function_exists( 'footer_end_style' ) ) {
     function footer_end_style() {
         $color    = get_option( 'footer_end_color', '#000' );
@@ -347,7 +346,7 @@ if ( ! function_exists( 'footer_end_style' ) ) {
     }
 }
 
-// Comment.
+// Comment Form Style.
 if ( ! function_exists( 'autos_comment_list' ) ) {
     function autos_comment_list( $comment, $args, $depth ) {
         if ( 'div' == $args['style'] ) {
